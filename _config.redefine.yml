@@ -21,11 +21,11 @@ info:
 # IMAGE CONFIGURATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
 defaults:
   # Favicon
-  favicon: /images/redefine-favicon.svg
+  favicon: /images/favicon.ico
   # Site logo
-  logo: 
+  logo: /images/favicon.ico
   # Site avatar
-  avatar: /images/redefine-avatar.svg
+  avatar: /images/kairos.jpg
 # IMAGE CONFIGURATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
