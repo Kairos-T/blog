@@ -16,14 +16,14 @@ Despite classical computers' capabilities (think about how you are reading this 
 ## Quantum Computing
 Quantum computers, on the other hand, are not affected by such nature. Instead, they are probabilistic, and the outcome of a quantum computation is not guaranteed.
 
-This is due to quantum computers leveraging on the principles of quantum mechanics, and to be exact — the Heisenberg Uncertainty Principle, and the concepts of superposition and entanglement.
+This is due to quantum computers leveraging on the principles of quantum mechanics, and to be exact, the Heisenberg Uncertainty Principle, and the concepts of superposition and entanglement.
 
 ## Heisenberg Uncertainty Principle
 The principle states that certain pairs of properties cannot be precisely measured simultaneously — the more accurately one property is measured, the less accurately the other can be determined.
 
 In the context of qubits (while not exactly the same), we can consider the the following properties as a pair:
 - State
-    - Similar to 1 and 0 in classical computing, expect that there is... an infinite possibility of the states in quantum computing
+    - Similar to 1 and 0 in classical computing, except that there is... an infinite possibility of the states in quantum computing
 - Phase
     - Angle representing how much the wave function of the qubit has rotated around the Bloch sphere (geometric representation of pure state  space of a two-level quantum mechanical systems, where points on the surface represent the possible states of a qubit).
 
