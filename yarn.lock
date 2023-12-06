@@ -621,6 +621,13 @@ hexo-generator-index@^3.0.0:
   dependencies:
     hexo-pagination "3.0.0"
 
+hexo-generator-searchdb@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.npmjs.org/hexo-generator-searchdb/-/hexo-generator-searchdb-1.4.1.tgz"
+  integrity sha512-7m8IBpZbI6iKb2jRYxs4pghD6Ln8ylQSRGl6MIC4G9wws21vYSXSD8rvC3MoCO+pWBHs6E/mTA/rjG+p2AZfVg==
+  dependencies:
+    nunjucks "^3.2.2"
+
 hexo-generator-tag@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/hexo-generator-tag/-/hexo-generator-tag-2.0.0.tgz"
@@ -1117,7 +1124,7 @@ normalize-path@^3.0.0, normalize-path@~3.0.0:
   resolved "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz"
   integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
-nunjucks@^3.2.3:
+nunjucks@^3.2.2, nunjucks@^3.2.3:
   version "3.2.4"
   resolved "https://registry.npmjs.org/nunjucks/-/nunjucks-3.2.4.tgz"
   integrity sha512-26XRV6BhkgK0VOxfbU5cQI+ICFUtMLixv1noZn1tGU38kQH5A5nmmbk/O45xdyBhD1esk47nKrY0mvQpZIhRjQ==
