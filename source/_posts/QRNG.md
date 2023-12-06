@@ -44,7 +44,7 @@ As such, changes to one entangled qubit will instantaneously affect its entangle
 ## Quantum Random Number Generator (QRNGs)
 Leveraging on the properties of quantum systems, quantum random number generators are implemented. They involve measuring quantum states, such as the polarisation of photons, or the spin of electrons, generating unpredictable sequences of numbers. 
 
-This is unlike classical pseudo-random number generators, and these numbers are theorectically impossible to predict.
+This is unlike classical pseudo-random number generators, and these numbers are theoretically impossible to predict.
 
 ## Simple QRNG
 A simple QRNG can be implemented with Qiskit, a Python toolkit for quantum computing framework by IBM. 
