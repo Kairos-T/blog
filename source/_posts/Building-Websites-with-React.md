@@ -2,7 +2,9 @@
 title: Building Websites with React
 date: 2023-12-17 11:38:30
 categories: Web
-tags: Web React
+tags: 
+    - Web
+    - React
 ---
 
 ## Introduction
