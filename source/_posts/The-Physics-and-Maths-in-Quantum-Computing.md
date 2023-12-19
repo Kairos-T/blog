@@ -31,9 +31,9 @@ In classical computing, information is processed using bits. In quantum computin
 **Qubits**
 
 - **States**: Can exist in multiple states simultaneously, known as superposition.
-  - Combination of both 0 and 1, denoted as `|0⟩` and `|1⟩`. The qubit can exist in a state `α|0⟩` + `β|1⟩`, where α and β are complex numbers.
+  - Combination of both 0 and 1, denoted as `|0⟩` and `|1⟩`. The qubit can exist in a state `|ψ⟩` = `α|0⟩` + `β|1⟩`, where `|ψ⟩` is a wavefunction that represents the qubit state, and `α` and `β` are complex numbers.
 - **Continuous**: Can be in between 0 and 1
-- **Probabilistic**: Given the same conditions, the outcome will not always be the same
+- **Probabilistic**: Given the same conditions, the outcome will not always be the same. It is random, but there might be a higher probability of a certain outcome.
 - **Measurement**: States are measured using quantum properties such as:
   - **Superconducting Qubits**: The direction of the current in a superconducting (zero resistance) loop
   - **Trapped Ion Qubits**: The energy levels of a trapped ion, manipulated using lasers
@@ -41,7 +41,7 @@ In classical computing, information is processed using bits. In quantum computin
 
 ## Quantum Mechanics
 
-Now that we have a basic understanding of the differences between classical and quantum computing, we can move on to the exact physics behind quantum computing.
+With basic understanding of the differences between classical and quantum computing, we can move on to the exact physics behind quantum computing.
 
 ### Wave-Particle Duality
 
@@ -62,12 +62,14 @@ Wave-particle duality is a concept that describes the behaviour of particles, su
 - **Localisation**: Particles can be localised to a specific position, meaning that they can be found at a specific point in space
 - **Trajectory**: Particles have a trajectory, which can be determined using Newton's laws of motion
 
-In essence, this duality allows quantum particles to behave like waves and particles at the same time. The dual nature is fundamental in quantum computing, with the wave-like properties being used to represent the superposition of qubits, and the particle-like properties being used to measure the qubits.
+In essence, this duality allows quantum particles to behave like waves and particles at the same time. The dual nature is fundamental in quantum computing, allowing things like superposition to exist due to the wave-like properties, and the measurement of qubits due to the particle-like properties.
+
+<!-- - **Superposition**: Existing in a combination of states associated with probability amplitudes in the wavefunction. On measurement, the wavefunction collapses into a single state, with a probability `P(x) = |ψ(x)|²` of being in the state `x`. -->
 
 ### Measurement and Quantum States
 
 **Measurement**
-I mentioned particle-like properties are used to measure qubits. But why? When a qubit is measured, it disrupts the quantum system, bringing about the collapse of the wavefunction. Hence, its state is determined and forced into either `|0⟩` or `|1⟩`. This is known as the **collapse of the wavefunction**.
+I mentioned particle-like properties are used to measure qubits. But why? When a qubit is measured, it disrupts the quantum system, bringing about the collapse of the wavefunction. Hence, its state is determined and forced into either `|0⟩` or `|1⟩`.
 
 Remember the Schrödinger's cat thought experiment? The cat inside a sealed box can be considered to be "both alive and dead", until the box is opened and the cat is observed. This is similar to the collapse of the wavefunction, where the state is determined only when the box is opened.
 
@@ -75,26 +77,31 @@ Remember the Schrödinger's cat thought experiment? The cat inside a sealed box 
 
 Additionally, the final state of the qubit is probabilistic yet random. The state of a qubit is represented by the formula `α|0⟩` + `β|1⟩`.
 
-Here, `α` and `β` are probability amplitudes. The probability amplitudes are normalised (to ensure probabilities are non-negative) such that `|α|² + |β|² = 1`.
+Here, `α` and `β` are probability amplitudes. The probabilities must be a non-negative number, to ensure the probabilistic interpretation of the quantum state is valid. Thus, normalisation is required.
 
-The probability of the qubit being in the state `|0⟩` or `|1⟩` is determined by the square of the magnitude of the complex number (which represents its state).
+> The normalisation conditions require that the sum of probabilities of all possible outcomes is equal to 1.
 
-For example, if the qubit is in the state `α|0⟩ + β|1⟩`, the probability of it being in the state `|0⟩` is `|α|²`, and the probability of it being in the state `|1⟩` is `|β|²`. The probability of it being in the state `|0⟩` is 50% if `α = β = 1/√2`.
+For a single qubit, this means that `|α|² + |β|² = 1`. The probability of the qubit being in the state `|0⟩` or `|1⟩` is determined by the square of the magnitude of the complex number (which represents its state).
+
+Lets say, we have a qubit in the state `|ψ⟩` = `α|0⟩` + `β|1⟩`. Since we know that the probability will be equal to 1, we can say that `|α|² + |β|² = 1`. We can derive that `|α|² = |β|² = 0.5`, and `α = β = 1/√2`.
 
 ### Entanglement
-Now that we understand quantum states, let us move on to entanglement. 
+
+Now that we understand quantum states better, let us move on to entanglement.
 
 ![Entanglement](../img/quantumphymath/entanglement.webp)
 
 > Entanglement is a phenomenon in which the quantum states of two or more objects have to be described with reference to each other, even though the individual objects may be spatially separated.
 
-This means that a change in the state of one qubit will affect the state of the other qubit, even if they are separated by a large distance. So, if one qubit is measured, its wavefunction collapses, and the wavefunction of the other qubit collapses as well.
+This means that a change in the state of one qubit will affect the state of the other qubit, even if they are separated by a large distance. So, if one qubit is measured, its wavefunction collapses, and the wavefunction of the other qubit collapses instantaneously as well.
 
-To look at this in a more mathematical manner. Lets consider two qubits `|a⟩` and `|b⟩`. On its own, each qubit can be represented by the formula `α|0⟩ + β|1⟩`. However, when the two qubits are entangled, they can be represented by the formula `α|00⟩ + β|01⟩ + γ|10⟩ + δ|11⟩`. 
+To look at this in a more mathematical manner, lets consider two qubits `|a⟩` and `|b⟩`. On its own, each qubit can be represented by the formula `α|0⟩ + β|1⟩`.
 
-- The notation `|xy⟩` represents the joint state of the two qubits, where `x` is the state of the first qubit, and `y` is the state of the second qubit. This means that the qubits are in a superposition of the states.
+However, when the two qubits are entangled, the joint state of the system can be represented by the formula `α|00⟩ + β|01⟩ + γ|10⟩ + δ|11⟩`.
+
+- `|xy⟩` represents the joint state of the two qubits, where `x` is the state of the first qubit, and `y` is the state of the second qubit.
 - The probability amplitudes `α`, `β`, `γ`, and `δ` are normalised such that `|α|² + |β|² + |γ|² + |δ|² = 1`.
 
-
+Essentially,the qubits are in a superposition of all the possible states, and the expression represents all the possible outcomes of the states of the qubit.
 
 ## Quantum Gates and Circuits
