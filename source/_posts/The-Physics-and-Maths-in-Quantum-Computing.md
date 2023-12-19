@@ -71,7 +71,9 @@ In essence, this duality allows quantum particles to behave like waves and parti
 **Measurement**
 I mentioned particle-like properties are used to measure qubits. But why? When a qubit is measured, it disrupts the quantum system, bringing about the collapse of the wavefunction. Hence, its state is determined and forced into either `|0⟩` or `|1⟩`.
 
-Remember the Schrödinger's cat thought experiment? The cat inside a sealed box can be considered to be "both alive and dead", until the box is opened and the cat is observed. This is similar to the collapse of the wavefunction, where the state is determined only when the box is opened.
+Remember the Schrödinger's cat thought experiment? The cat inside a sealed box can be considered to be "both alive and dead", until the box is opened and the cat is observed.
+![Schrödinger's Cat](../img/quantumphymath/cat.png)
+This is similar to the collapse of the wavefunction, where the state is determined only when the box is opened.
 
 **Quantum States**
 
