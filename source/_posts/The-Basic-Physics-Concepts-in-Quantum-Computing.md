@@ -68,14 +68,15 @@ In essence, this duality allows quantum particles to behave like waves and parti
 
 ## Measurement and Quantum States
 
-**Measurement**
+### Measurement
+
 I mentioned particle-like properties are used to measure qubits. But why? When a qubit is measured, it disrupts the quantum system, bringing about the collapse of the wavefunction. Hence, its state is determined and forced into either `|0⟩` or `|1⟩`.
 
 Remember the Schrödinger's cat thought experiment? The cat inside a sealed box can be considered to be "both alive and dead", until the box is opened and the cat is observed.
 ![Schrödinger's Cat](../img/quantumphymath/cat.png)
 This is similar to the collapse of the wavefunction, where the state is determined only when the box is opened.
 
-**Quantum States**
+### Quantum States
 
 Additionally, the final state of the qubit is probabilistic yet random. The state of a qubit is represented by the formula `α|0⟩` + `β|1⟩`.
 
@@ -95,7 +96,7 @@ But first, lets move on to another important concept in quantum computing: entan
 
 > Entanglement is a phenomenon in which the quantum states of two or more objects have to be described with reference to each other, even though the individual objects may be spatially separated.
 
-This means that a change in the state of one qubit will affect the state of the other qubit, even if they are separated by a large distance. So, if one qubit is measured, its wavefunction collapses, and the wavefunction of the other qubit collapses instantaneously as well.
+This means that a change in the state of one qubit will affect the state of the other qubit, even if they are separated by a large distance. As such, if one qubit is measured, its wavefunction collapses, and the wavefunction of the other qubit collapses instantaneously as well.
 
 To look at this in a more mathematical manner, lets consider two qubits `|a⟩` and `|b⟩`. On its own, each qubit can be represented by the formula `α|0⟩ + β|1⟩`.
 
@@ -106,13 +107,34 @@ However, when the two qubits are entangled, the joint state of the system can be
 
 Essentially,the qubits are in a superposition of all the possible states, and the expression represents all the possible outcomes of the states of the qubit.
 
-## Quantum Gates and Circuits
+# Quantum Gates and Circuits
+
 With the foundational concepts out of the way, we can now move on to the quantum gates and circuits.
 
-### Quantum Gates
+## Quantum Gates
+
 In classical computing, logic gates are used to manipulate bits. You might be familiar with the classical gates like `AND`, `OR`, and `NOT`. Similarly, quantum gates are used to manipulate qubits in quantum computing.
 
-There are many different quantum gates: `Hadamard`, `Pauli-X, Y, Z`, `CNOT`, `Toffoli`, `SWAP` and many more. 
+There are many different quantum gates: `Hadamard`, `Pauli-X, Y, Z`, `CNOT`, `Toffoli`, `SWAP` and many more.
 
-**Hadamard Gate**
+### Hadamard Gate
 
+We briefly touched upon the Hadamard gate earlier. At its crux, it is used to create superposition. When applied to a qubit, it transforms the qubit from a classical state `|0⟩ or |1⟩` into an equal superposition of state, which basis is denoted as `|+⟩ or |−⟩` respectively.
+
+> Basis: A set of states that can be used to represent any state within the vector space. Most commonly, the basis is represented by the states `|0⟩` and `|1⟩`. However, there are other bases that are frequently used, such as the `|+⟩` and `|−⟩` basis.
+
+So, the states `|+⟩` and `|−⟩` are the superposition states of `|0⟩` and `|1⟩` respectively. They are represented by the formula:
+
+- `|+⟩` = `1/√2` (`|0⟩` + `|1⟩`)
+- `|−⟩` = `1/√2` (`|0⟩` - `|1⟩`).
+
+  Do note that `|+⟩` and `|−⟩` can also be represented by `H|0⟩` and `H|1⟩` respectively, where `H` is the Hadamard gate.
+
+As a result, the qubit is in a superposition, and the probability of it being in the state `|0⟩` or `|1⟩` is equal when measured is equal.
+
+The way the Hadamard gate works is through these steps:
+![Hadamard Gate](../img/quantumphymath/hadamard.png)
+
+1. Initialise a qubit in the state `|0⟩`.
+2. Apply the Hadamard gate to the qubit.
+3. The qubit is now in the state `|+⟩`.
