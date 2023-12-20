@@ -1,24 +1,24 @@
 ---
-title: The Physics and Maths in Quantum Computing
+title: The Basic Physics Concepts in Quantum Computing
 date: 2023-12-18 09:39:56
 categories: Quantum
 tags:
   - Quantum
 ---
 
-## Introduction
+# Introduction
 
-Quantum computing, as mentioned in my previous posts, has been a huge buzzword in the tech industry due to its potential to revolutionise some industries. But how exactly does it work? In this post, I will attempt to explain the physics and maths behind quantum computing in a simple manner.
+Quantum computing, as mentioned in my previous posts, has been a huge buzzword in the tech industry due to its potential to revolutionise some industries. But how exactly does it work? In this post, I will attempt to explain the physics behind quantum computing in a simple manner.
 
 PS: This post is still a work in progress, I'll be adding more content soon!
 
-## Classical vs Quantum Computing
+# Classical vs Quantum Computing
 
 Before we dive headfirst into the concepts, let us understand the properties of classical and quantum computing.
 
 In classical computing, information is processed using bits. In quantum computing, information is processed using quantum bits, or qubits.
 
-### Properties
+## Properties
 
 **Bits**
 
@@ -39,11 +39,11 @@ In classical computing, information is processed using bits. In quantum computin
   - **Trapped Ion Qubits**: The energy levels of a trapped ion, manipulated using lasers
   - **Photonic Qubits**: The polarisation of a photon (horizontal or vertical)
 
-## Quantum Mechanics
+# Quantum Mechanics
 
 With basic understanding of the differences between classical and quantum computing, we can move on to the exact physics behind quantum computing.
 
-### Wave-Particle Duality
+## Wave-Particle Duality
 
 Wave-particle duality is a concept that describes the behaviour of particles, such as electrons and photons. It states that these particles can behave like both a wave and a particle, depending on the situation (the context in which they are observed or measured).
 
@@ -66,7 +66,7 @@ In essence, this duality allows quantum particles to behave like waves and parti
 
 <!-- - **Superposition**: Existing in a combination of states associated with probability amplitudes in the wavefunction. On measurement, the wavefunction collapses into a single state, with a probability `P(x) = |ψ(x)|²` of being in the state `x`. -->
 
-### Measurement and Quantum States
+## Measurement and Quantum States
 
 **Measurement**
 I mentioned particle-like properties are used to measure qubits. But why? When a qubit is measured, it disrupts the quantum system, bringing about the collapse of the wavefunction. Hence, its state is determined and forced into either `|0⟩` or `|1⟩`.
@@ -85,11 +85,11 @@ Here, `α` and `β` are probability amplitudes. The probabilities must be a non-
 
 For a single qubit, this means that `|α|² + |β|² = 1`. The probability of the qubit being in the state `|0⟩` or `|1⟩` is determined by the square of the magnitude of the complex number (which represents its state).
 
-Lets say, we have a qubit in the state `|ψ⟩` = `α|0⟩` + `β|1⟩`. Since we know that the probability will be equal to 1, we can say that `|α|² + |β|² = 1`. We can derive that `|α|² = |β|² = 0.5`, and `α = β = 1/√2`.
+Lets say, we have a qubit in the state `|ψ⟩` = `α|0⟩` + `β|1⟩`. Since we know that the probability will be equal to 1, we can say that `|α|² + |β|² = 1`. We can assume that `|α|² = |β|² = 0.5`, and `α = β = 1/√2`. But wait. We found that the states of the qubits are probabilistic, so how can we assume that `|α|² = |β|² = 0.5` is true? This is where the Hadamard gate comes in. This will be touched on in the section under Quantum Gates and Circuits.
 
-### Entanglement
+## Entanglement
 
-Now that we understand quantum states better, let us move on to entanglement.
+But first, lets move on to another important concept in quantum computing: entanglement.
 
 ![Entanglement](../img/quantumphymath/entanglement.webp)
 
@@ -107,3 +107,12 @@ However, when the two qubits are entangled, the joint state of the system can be
 Essentially,the qubits are in a superposition of all the possible states, and the expression represents all the possible outcomes of the states of the qubit.
 
 ## Quantum Gates and Circuits
+With the foundational concepts out of the way, we can now move on to the quantum gates and circuits.
+
+### Quantum Gates
+In classical computing, logic gates are used to manipulate bits. You might be familiar with the classical gates like `AND`, `OR`, and `NOT`. Similarly, quantum gates are used to manipulate qubits in quantum computing.
+
+There are many different quantum gates: `Hadamard`, `Pauli-X, Y, Z`, `CNOT`, `Toffoli`, `SWAP` and many more. 
+
+**Hadamard Gate**
+
