@@ -8,7 +8,7 @@ tags:
 
 # Introduction
 
-Quantum computing, as mentioned in my previous posts, has been a huge buzzword in the tech industry due to its potential to revolutionise some industries. But how exactly does it work? In this post, I will attempt to explain the physics behind quantum computing in a simple manner.
+ Quantum computing, as mentioned in my previous posts, has been a huge buzzword in the tech industry due to its potential to revolutionise some industries. But how exactly does it work? In this post, I will attempt to explain the physics behind quantum computing in a simple manner.
 
 PS: This post is still a work in progress, I'll be adding more content soon!
 
@@ -80,7 +80,7 @@ This is similar to the collapse of the wavefunction, where the state is determin
 
 Additionally, the final state of the qubit is probabilistic yet random. The state of a qubit is represented by the formula `α|0⟩` + `β|1⟩`.
 
-Here, `α` and `β` are probability amplitudes. The probabilities must be a non-negative number, to ensure the probabilistic interpretation of the quantum state is valid. Thus, normalisation is required.
+Here, `α` and `β` are probability amplitudes. The probabilities must be a non-negative number to ensure the probabilistic interpretation of the quantum state is valid. Thus, normalisation is required.
 
 > The normalisation conditions require that the sum of probabilities of all possible outcomes is equal to 1.
 
@@ -88,9 +88,37 @@ For a single qubit, this means that `|α|² + |β|² = 1`. The probability of th
 
 Lets say, we have a qubit in the state `|ψ⟩` = `α|0⟩` + `β|1⟩`. Since we know that the probability will be equal to 1, we can say that `|α|² + |β|² = 1`. We can assume that `|α|² = |β|² = 0.5`, and `α = β = 1/√2`. But wait. We found that the states of the qubits are probabilistic, so how can we assume that `|α|² = |β|² = 0.5` is true? This is where the Hadamard gate comes in. This will be touched on in the section under Quantum Gates and Circuits.
 
+## Orthogonality
+
+In quantum computing, the states of qubits are represented by vectors (represented by the formula `α|0⟩` + `β|1⟩`) in a vector space. States are said to be orthogonal if the angle between them is 90°, i.e. they are perpendicular to each other.
+
+To make things easier to visualise, in a two-dimensional vector space, when we say that |0⟩ and |1⟩ are orthogonal, they are perpendicular to each other, like the x and y axes in a Cartesian plane.
+
+![Orthogonality](../img/quantumphymath/orthogonal_2d.jpg)
+
+In a more mathematical sense, the two vectors are orthogonal if their inner product is zero: `⟨a|b⟩` = 0.
+
+However, there aren't only two-dimensional vector spaces. What about three-dimensional vector spaces? This is where the Bloch sphere comes in.
+
+### Bloch Sphere
+
+The Bloch sphere is a geometric representation to visualise the state of a qubit. It is based on the idea that any qubit state can be represented by a vector on the **surface** of a sphere.
+
+![Bloch Sphere](../img/quantumphymath/blochsphere.png)
+
+In the Bloch sphere, the north pole corresponds to the state `|0⟩`, and the south pole corresponds to the state `|1⟩`. Hence, the states `|0⟩` and `|1⟩` are on opposite ends of the sphere. 
+
+You might think that they aren't orthogonal, since they are linear, and not perpendicular to each other. However, in the Bloch sphere, when we talk about right angles, we are talking about the geometric relationship between the vectors between the states. 
+
+If we were to draw a line from the north pole to the south pole, and another line from the equator to the equator, the two lines would be perpendicular to each other. This is what we mean by the states being orthogonal.
+
+Altogether, in the Bloch sphere, any pair of points that are on opposite ends of a diameter represent orthogonal states.
+
+Orthogonality is important in quantum computing, allows us to distinguish between the states of qubits. This is because when we measure a qubit, it will collapse into either `|0⟩` or `|1⟩`. Therefore, we can distinguish between the two states during measurement. 
+
 ## Entanglement
 
-But first, lets move on to another important concept in quantum computing: entanglement.
+Lets move on to another important concept in quantum computing: entanglement.
 
 ![Entanglement](../img/quantumphymath/entanglement.webp)
 
@@ -132,9 +160,17 @@ So, the states `|+⟩` and `|−⟩` are the superposition states of `|0⟩` and
 
 As a result, the qubit is in a superposition, and the probability of it being in the state `|0⟩` or `|1⟩` is equal when measured is equal.
 
-The way the Hadamard gate works is through these steps:
+The way a qubit is transformed by the Hadamard gate is through these steps:
 ![Hadamard Gate](../img/quantumphymath/hadamard.png)
 
 1. Initialise a qubit in the state `|0⟩`.
 2. Apply the Hadamard gate to the qubit.
 3. The qubit is now in the state `|+⟩`.
+
+Thus in all, the Hadamard gate is used to create superposition with equal probability of the qubit being in the state `|0⟩` or `|1⟩`.
+
+But before we move on, lets go even deeper. A Hadamard gate can be represented by a matrix:
+
+$$
+H = \\frac{1}{\\sqrt{2}} \\begin{bmatrix} 1 & 1 \\\\ 1 & -1 \\end{bmatrix}
+$$
