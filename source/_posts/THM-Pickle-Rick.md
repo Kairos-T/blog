@@ -60,6 +60,8 @@ Nmap done: 1 IP address (1 host up) scanned in 50.08 seconds
 
 There are two open ports: 22 and 80. Port 22 is running ssh, and port 80 is running http. I skipped over port 22 since it would only be useful if I had credentials.
 
+Since I already checked out the page, I moved onto the next step.
+
 ## Gobuster
 
 As with the previous rooms, I ran a gobuster scan to see if there were any hidden directories. To make the scan faster, I limited the extensions:
