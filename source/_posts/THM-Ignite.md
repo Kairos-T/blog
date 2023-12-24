@@ -16,6 +16,8 @@ tags:
 
 This is a writeup for the room [Ignite](https://tryhackme.com/room/ignite) on TryHackMe. Ignite is a beginner level room that focuses on Linux exploitation.
 
+> Ignite | A new start-up has a few issues with their web server.
+
 This was a more unique room, with an actual CVE exploit that was used. It included quite a bit of things that I just learnt, with a little bit of tweaks here and there.
 
 # Enumeration
