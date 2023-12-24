@@ -12,7 +12,7 @@ tags:
 
 This is a writeup for the room [OhSINT](https://tryhackme.com/room/ohsint) on TryHackMe. OhSINT is a beginner level room that focuses on OSINT.
 
-This was my first ever room that I have successfully completed on TryHackMe. It was a pretty simple room that focused on OSINT.
+This was one of my first rooms that I have successfully completed on TryHackMe. It was a pretty simple room that focused on OSINT.
 
 # Tasks
 
