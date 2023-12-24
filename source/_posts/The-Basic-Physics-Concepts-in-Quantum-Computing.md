@@ -106,15 +106,15 @@ The Bloch sphere is a geometric representation to visualise the state of a qubit
 
 ![Bloch Sphere](../img/quantumphymath/blochsphere.png)
 
-In the Bloch sphere, the north pole corresponds to the state `|0⟩`, and the south pole corresponds to the state `|1⟩`. Hence, the states `|0⟩` and `|1⟩` are on opposite ends of the sphere. 
+In the Bloch sphere, the north pole corresponds to the state `|0⟩`, and the south pole corresponds to the state `|1⟩`. Hence, the states `|0⟩` and `|1⟩` are on opposite ends of the sphere.
 
-You might think that they aren't orthogonal, since they are linear, and not perpendicular to each other. However, in the Bloch sphere, when we talk about right angles, we are talking about the geometric relationship between the vectors between the states. 
+You might think that they aren't orthogonal, since they are linear, and not perpendicular to each other. However, in the Bloch sphere, when we talk about right angles, we are talking about the geometric relationship between the vectors between the states.
 
 If we were to draw a line from the north pole to the south pole, and another line from the equator to the equator, the two lines would be perpendicular to each other. This is what we mean by the states being orthogonal.
 
 Altogether, in the Bloch sphere, any pair of points that are on opposite ends of a diameter represent orthogonal states.
 
-Orthogonality is important in quantum computing, allows us to distinguish between the states of qubits. This is because when we measure a qubit, it will collapse into either `|0⟩` or `|1⟩`. Therefore, we can distinguish between the two states during measurement. 
+Orthogonality is important in quantum computing, allows us to distinguish between the states of qubits. This is because when we measure a qubit, it will collapse into either `|0⟩` or `|1⟩`. Therefore, we can distinguish between the two states during measurement.
 
 ## Entanglement
 
@@ -174,3 +174,22 @@ But before we move on, lets go even deeper. A Hadamard gate can be represented b
 $$
 H = \\frac{1}{\\sqrt{2}} \\begin{bmatrix} 1 & 1 \\\\ 1 & -1 \\end{bmatrix}
 $$
+
+Some significant properties of the Hadamard gate are:
+- **Normalisation**: The `1/√2` is used to normalise the matrix, ensuring that the sum of probabilities of all possible outcomes is equal to 1.
+- **Matrix**: The matrix is used to represent the transformation of the qubit. The qubit is transformed by multiplying the matrix with the qubit.
+
+  For example, if we were to apply the Hadamard gate to the state `|0⟩`, we would multiply the matrix with the state vector:
+
+  $$
+  H|0⟩ = \\frac{1}{\\sqrt{2}} \\begin{bmatrix} 1 & 1 \\\\ 1 & -1 \\end{bmatrix} \\begin{bmatrix} 1 \\\\ 0 \\end{bmatrix} = \\frac{1}{\\sqrt{2}} \\begin{bmatrix} 1 \\\\ 1 \\end{bmatrix} = \\frac{1}{\\sqrt{2}} (|0⟩ + |1⟩) = |+⟩
+  $$
+
+  Hence, we can see that the state `|0⟩` is transformed into the state `|+⟩`.
+
+- **Equal Superposition**: The gate evenly distributes the probability amplitudes between the states `|0⟩` and `|1⟩`, creating equal superposition. The first column corresponds to the state `|0⟩`, and the second column corresponds to the state `|1⟩`.
+- **Inverse**: The Hadamard gate is its own inverse, meaning that applying the Hadamard gate twice will return the qubit to its original state. This is because the matrix is symmetric, and the inverse of a symmetric matrix is itself.
+
+In a nutshell, the Hadamard gate is used to create superposition with equal probability of the qubit being in the state `|0⟩` or `|1⟩`.
+
+### Pauli-X, Y, Z Gates
