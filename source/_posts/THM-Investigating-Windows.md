@@ -28,7 +28,7 @@ Please note that this machine does not respond to ping (ICMP) and may take a few
 
 This was rather straightforward. I went into the Windows Settings > System > About and found the version and year of the Windows machine.
 
-![Windows Version](/images/THM-Investigating-Windows/Q1.png)
+![Windows Version](./img/investigatingwindows/Q1.png)
 
 Ans: Windows Server 2016
 
@@ -46,7 +46,7 @@ Log ons are recorded in the Windows Event Log. In the search bar, I looked for t
 
 I then went to `Windows Logs > Security`, which is where the log ons and other security events are recorded. I then looked for the latest log on event.
 
-![Event Viewer](/images/THM-Investigating-Windows/Q2.png)
+![Event Viewer](./img/investigatingwindows/Q2.png)
 
 Ans: Administrator
 
@@ -56,7 +56,7 @@ Additionally, one could filter the logs based on the Event ID. The Event ID for 
 
 I filtered the logs for the user `John` and looked for the latest log on event.
 
-![Event Viewer](/images/THM-Investigating-Windows/Q3.png)
+![Event Viewer](./img/investigatingwindows/Q3.png)
 
 Ans: 03/02/2019 5:48:32 PM
 
@@ -66,13 +66,13 @@ Similarly, a better way to do this would be to filter the logs based on the Even
 
 The first thing I did was to check out the hosts file. I went to `C:\Windows\System32\drivers\etc` and opened the hosts file in Notepad.
 
-![Hosts File](/images/THM-Investigating-Windows/hf.png)
+![Hosts File](./img/investigatingwindows/hf.png)
 
 Looking at the file, there were many entries pointing to the local host. This was a little weird, but we can come back to it in a bit.
 
 I remember seeing something when I started the machine up.
 
-![Startup](/images/THM-Investigating-Windows/startup.png)
+![Startup](./img/investigatingwindows/startup.png)
 
 It did show what IP it w as connecting to!
 
@@ -80,13 +80,13 @@ Ans: 10.34.2.3
 
 Frankly, this was quite easy to miss since it was a popup that disappeared quickly. Another way would be to look at the `regedit`. In regedit, and at `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run`. This is where startup programs are stored.
 
-![Regedit](/images/THM-Investigating-Windows/Q4.png)
+![Regedit](./img/investigatingwindows/Q4.png)
 
 ## 5. What two accounts had administrative privileges (other than the Administrator user)? Answer format: username1, username2
 
 Initially, when answering the first question, I snooped around the users settings too. I saw two other accounts, John and Jenny.
 
-![Users](/images/THM-Investigating-Windows/Settings.png)
+![Users](./img/investigatingwindows/Settings.png)
 
 Sadly, they were not the answers. I searched up commands to find the answer.
 
@@ -94,7 +94,7 @@ Sadly, they were not the answers. I searched up commands to find the answer.
 net localgroup administrators
 ```
 
-![Admins](/images/THM-Investigating-Windows/Q5.png)
+![Admins](./img/investigatingwindows/Q5.png)
 
 Ans: Jenny, Guest
 
@@ -102,7 +102,7 @@ Ans: Jenny, Guest
 
 For this task, I looked around in the Task Scheduler > Task Scheduler Library. There were a few tasks:
 
-![Tasks](/images/THM-Investigating-Windows/Q6.png)
+![Tasks](./img/investigatingwindows/Q6.png)
 
 Here, the one that stood out and could fit the answer blank was the `Clean file system`.
 
@@ -128,11 +128,11 @@ Ans: Never
 
 Throughout the time I was on the machine, there was a program that kept popping  up.
 
-![Program](/images/THM-Investigating-Windows/Popup.png)
+![Program](./img/investigatingwindows/Popup.png)
 
 It showed the path of the program, `C:\TMP\mim.exe`. So, the date of the compromise would probably be when the file/folder was created. Navigating to the folder:
 
-![Folder](/images/THM-Investigating-Windows/Q10.png)
+![Folder](./img/investigatingwindows/Q10.png)
 
 Ans: 03/02/2019
 
@@ -145,7 +145,7 @@ After I filtered it, and found the latest event, I got a wrong answer :(
 
 I tried filtering only for Security events the same way and I got the answer:
 
-![Event](/images/THM-Investigating-Windows/Q11.png)
+![Event](./img/investigatingwindows/Q11.png)
 
 After looking back at the question, I realised that the issue was the Task Category rather than the type of event. It should be `Security Group Management` instead of `Special Logon`. Security Group Management (Special Logon) is apparently different from Special Logon! 
 
@@ -160,11 +160,11 @@ Ans: 03/02/2019 4:04:49 PM
 
 Earlier on, in the task scheduler, I found other tasks. I looked through the `Actions` tab of each of the tasks and one of them, `GameOver` had one that seemed to take the passwords. Anyway, I've been seeing the same pop up every 5 minutes, but it didn't last long enough for me to read it.
 
-![GameOver](/images/THM-Investigating-Windows/Q12a.png)
+![GameOver](./img/investigatingwindows/Q12a.png)
 
 Since the task was running `mim.exe` in the same folder earlier, I checked out the files there. I tried running the file again but the pop up disappeared too quickly. Anyway, I found a file `mim-out` which seemed to be the output of the program.
 
-![mim-out](/images/THM-Investigating-Windows/Q12b.png)
+![mim-out](./img/investigatingwindows/Q12b.png)
 
 Ans: mimikatz
 
@@ -172,7 +172,7 @@ Ans: mimikatz
 
 While doing task 4, the host file looked weird.
 
-![Hosts File](/images/THM-Investigating-Windows/Q13.png)
+![Hosts File](./img/investigatingwindows/Q13.png)
 
 In Command Prompt, I tried pinging google.com.
 ```powershell
@@ -201,7 +201,7 @@ Ans: 76.32.97.132
 
 On Windows, the default webserver is IIS (Internet Information Services). The default directory for it is `C:\inetpub\wwwroot`. I navigated to the directory.  
 
-![IIS](/images/THM-Investigating-Windows/Q14.png)
+![IIS](./img/investigatingwindows/Q14.png)
 
 There were two types of files, `.JSP` and `.GIF`. Obviously, the shell was not a `.GIF` file. I had to search up what `.JSP` was. 
 
@@ -218,7 +218,7 @@ Knowing little about Windows, I had to use the hint.
 
 I went to Windows Defender Firewall > Monitoring > Firewall to look for the latest rule. Looking at the `Local Port` column, I found the latest rule:
 
-![Firewall](/images/THM-Investigating-Windows/Q15.png)
+![Firewall](./img/investigatingwindows/Q15.png)
 
 Ans: 1337
 
