@@ -4,11 +4,14 @@ date: 2023-12-18 09:39:56
 categories: Quantum
 tags:
   - Quantum
+  - Physics
 ---
 
 # Introduction
 
- Quantum computing, as mentioned in my previous posts, has been a huge buzzword in the tech industry due to its potential to revolutionise some industries. But how exactly does it work? In this post, I will attempt to explain the physics behind quantum computing in a simple manner.
+ Quantum computing, as mentioned in my previous posts, has been a huge buzzword in the tech industry due to its potential to revolutionise some industries. But how exactly does it work? Learning about quantum computing was rather daunting for me, with the complex physics concepts and mathematics involved, and so, so much information to digest.
+
+In this post, I will attempt to explain the physics behind quantum computing in a simple manner.
 
 PS: This post is still a work in progress, I'll be adding more content soon!
 
@@ -41,9 +44,24 @@ In classical computing, information is processed using bits. In quantum computin
 
 # Quantum Mechanics
 
-With basic understanding of the differences between classical and quantum computing, we can move on to the exact physics behind quantum computing.
+Knowing the differences between classical and quantum computing, we can address the elephant in the room: quantum mechanics.
 
-## Wave-Particle Duality
+Quantum mechanics is a branch of physics that describes the behaviour of particles at the atomic and subatomic levels. It is the foundation of quantum computing, and is used to describe the behaviour of qubits.
+
+## Planck's Constant and Wave-Particle Duality
+
+### Planck's Constant
+Planck's constant, is a fundamental physical constant in quantum mechanics. Denoted as `h` and having a value of approx. `6.626 x 10^-34 J*s`, it was used to explain energy quantisation, the idea that energy can only exist in discrete amounts. Planck proposed that energy is transferred in  discrete amounts, known as `quanta`.
+
+Said relationship is represented by the formula `E = hf`, where: 
+- `E` is the energy of the photon
+- `h` is Planck's constant
+- `f` is the frequency of the photon
+
+This proves that energy of a quantum is proportional to its frequency. The higher the frequency, the higher the energy.
+
+### Wave-Particle Duality
+Building  on Planck's constant, we can move on to the concept of wave-particle duality.
 
 Wave-particle duality is a concept that describes the behaviour of particles, such as electrons and photons. It states that these particles can behave like both a wave and a particle, depending on the situation (the context in which they are observed or measured).
 
@@ -62,15 +80,15 @@ Wave-particle duality is a concept that describes the behaviour of particles, su
 - **Localisation**: Particles can be localised to a specific position, meaning that they can be found at a specific point in space
 - **Trajectory**: Particles have a trajectory, which can be determined using Newton's laws of motion
 
-In essence, this duality allows quantum particles to behave like waves and particles at the same time. The dual nature is fundamental in quantum computing, allowing things like superposition to exist due to the wave-like properties, and the measurement of qubits due to the particle-like properties.
+Looking back at the quanta relationship, `E = hf`, we can draw the link to wave-particle duality. The energy of the particle (`E`), has **particle-like properties**, while it's frequency (`f`), has **wave-like properties**. From this, we can see that the energy of the particle is  quantised into discrete units, while the frequency of the particle is continuous.
 
-<!-- - **Superposition**: Existing in a combination of states associated with probability amplitudes in the wavefunction. On measurement, the wavefunction collapses into a single state, with a probability `P(x) = |ψ(x)|²` of being in the state `x`. -->
+In essence, this allows quantum particles to behave like waves and particles at the same time. The dual nature is fundamental in quantum computing, allowing things like superposition to exist due to the wave-like properties, and the measurement of qubits due to the particle-like properties.
 
 ## Measurement and Quantum States
 
 ### Measurement
 
-I mentioned particle-like properties are used to measure qubits. But why? When a qubit is measured, it disrupts the quantum system, bringing about the collapse of the wavefunction. Hence, its state is determined and forced into either `|0⟩` or `|1⟩`.
+Earlier, I mentioned particle-like properties are used to measure qubits. But why? When a qubit is measured, it disrupts the quantum system, bringing about the collapse of the wavefunction. Hence, its state is determined and forced into either `|0⟩` or `|1⟩`.
 
 Remember the Schrödinger's cat thought experiment? The cat inside a sealed box can be considered to be "both alive and dead", until the box is opened and the cat is observed.
 ![Schrödinger's Cat](../img/quantumphymath/cat.png)
@@ -108,9 +126,13 @@ The Bloch sphere is a geometric representation to visualise the state of a qubit
 
 In the Bloch sphere, the north pole corresponds to the state `|0⟩`, and the south pole corresponds to the state `|1⟩`. Hence, the states `|0⟩` and `|1⟩` are on opposite ends of the sphere.
 
-You might think that they aren't orthogonal, since they are linear, and not perpendicular to each other. However, in the Bloch sphere, when we talk about right angles, we are talking about the geometric relationship between the vectors between the states.
+You might think that they aren't orthogonal, since they are linear, and not perpendicular to each other. However, when we talk about them being perpendicular, we are referring to them in a cartesian plane.
 
-If we were to draw a line from the north pole to the south pole, and another line from the equator to the equator, the two lines would be perpendicular to each other. This is what we mean by the states being orthogonal.
+The cartesian plane and Bloch sphere are two different representations of the similar concept. They differ in that (with reference to [this article](https://medium.com/quantum-untangled/visualizing-quantum-logic-gates-part-1-515bb7b58916)):
+
+> The angle between the α-axis and the vector of the cartesian plane is always half of the angle between the z-axis and the vector of the Bloch sphere. In other words, if we increased the angle of the cartesian plane by 90º, the angle θ of the Bloch sphere increases by 180º.
+
+![Bloch Sphere](../img/quantumphymath/bloch-cartesian.webp)
 
 Altogether, in the Bloch sphere, any pair of points that are on opposite ends of a diameter represent orthogonal states.
 
@@ -176,6 +198,7 @@ H = \\frac{1}{\\sqrt{2}} \\begin{bmatrix} 1 & 1 \\\\ 1 & -1 \\end{bmatrix}
 $$
 
 Some significant properties of the Hadamard gate are:
+
 - **Normalisation**: The `1/√2` is used to normalise the matrix, ensuring that the sum of probabilities of all possible outcomes is equal to 1.
 - **Matrix**: The matrix is used to represent the transformation of the qubit. The qubit is transformed by multiplying the matrix with the qubit.
 
