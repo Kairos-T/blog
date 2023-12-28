@@ -1,5 +1,5 @@
 ---
-title: LazyAdmin
+title: "THM: LazyAdmin"
 date: 2023-12-27 21:26:33
 categories:
   - TryHackMe
