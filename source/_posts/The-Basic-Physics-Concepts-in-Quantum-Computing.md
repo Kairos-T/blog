@@ -161,13 +161,12 @@ Essentially,the qubits are in a superposition of all the possible states, and th
 
 With the foundational concepts out of the way, we can now move on to the quantum gates and circuits.
 
-## Quantum Gates
-
+**Quantum Gates**
 In classical computing, logic gates are used to manipulate bits. You might be familiar with the classical gates like `AND`, `OR`, and `NOT`. Similarly, quantum gates are used to manipulate qubits in quantum computing.
 
 There are many different quantum gates: `Hadamard`, `Pauli-X, Y, Z`, `CNOT`, `Toffoli`, `SWAP` and many more.
 
-### Hadamard Gate
+## Hadamard Gate
 
 We briefly touched upon the Hadamard gate earlier. At its crux, it is used to create superposition. When applied to a qubit, it transforms the qubit from a classical state `|0⟩ or |1⟩` into an equal superposition of state, which basis is denoted as `|+⟩ or |−⟩` respectively.
 
@@ -212,7 +211,16 @@ Some significant properties of the Hadamard gate are:
 
 - **Equal Superposition**: The gate evenly distributes the probability amplitudes between the states `|0⟩` and `|1⟩`, creating equal superposition. The first column corresponds to the state `|0⟩`, and the second column corresponds to the state `|1⟩`.
 - **Inverse**: The Hadamard gate is its own inverse, meaning that applying the Hadamard gate twice will return the qubit to its original state. This is because the matrix is symmetric, and the inverse of a symmetric matrix is itself.
+  - This is rather intriguing, since it would seem that putting a qubit through the gate twice would randomise it twice. But it isn't the case, and the qubit returns to its original state. It seems like the qubit "remembers" its original state, and returns to it after being put through the gate twice.
 
 In a nutshell, the Hadamard gate is used to create superposition with equal probability of the qubit being in the state `|0⟩` or `|1⟩`.
 
-### Pauli-X, Y, Z Gates
+## Pauli-X, Y, Z Gates
+
+The Pauli-X, Y and Z gates are different (but similar) gates that are also used to manipulate qubits. Each gate operates on a single qubit and introduces specific rotations in the quantum state space. 
+
+In other words, they change the state of the qubit, but preserve the probability distribution of the qubit. With reference to the Bloch sphere
+
+**Pauli-X Gate**
+
+The Pauli-X gate is used to flip the state of the qubit. It is the quantum equivalent of the classical `NOT` gate. For example, if the qubit is in the state `|0⟩`, it will be flipped to the state `|1⟩`, and vice versa.
