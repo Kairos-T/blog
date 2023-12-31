@@ -20,7 +20,7 @@ This simplifies the development process and reduce the hardcoded-ness of the cod
 
 ## Hardcoded?
 
-In my previous iteration of myy portfolio website that was built with pure, vanilla HTML, CSS and JS, almost everything was hardcoded. If I had a major change to say, the navigation bar, I would have to go through every single page and change it.
+In my previous iteration of my portfolio website that was built with pure, vanilla HTML, CSS and JS, almost everything was hardcoded. If I had a major change to say, the navigation bar, I would have to go through every single page and change it.
 
 This is not only tedious, but also inefficient. Additionally, as the content grew, the loading times soared, and the site became slower and slower.
 
