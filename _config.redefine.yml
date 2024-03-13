@@ -219,11 +219,11 @@ home:
   # Article categories visibility
   categories:
     enable: true  # Whether to enable
-    limit: 3 # Max number of categories to display
+    limit: 5 # Max number of categories to display
   # Article tags visibility
   tags:
     enable: true  # Whether to enable
-    limit: 3  # Max number of tags to display
+    limit: 5  # Max number of tags to display
 # HOME PAGE ARTICLE SETTINGS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -237,7 +237,7 @@ articles:
     image_alignment: center # image alignment. left, center
     image_caption: false # Whether to display image caption
     link_icon: true # Whether to display link icon
-    title_alignment: left # Title alignment. left, center
+    title_alignment: center # Title alignment. left, center
   # Word count. Requires hexo-wordcount (npm install hexo-wordcount). See https://github.com/willin/hexo-wordcount
   word_count:
     enable: true # Whether to enable
@@ -246,7 +246,7 @@ articles:
   # Author label
   author_label: 
     enable: true # Whether to enable
-    auto: true # Whether to automatically add author label, e.g. Lv1, Lv2, Lv3...
+    auto: false # Whether to automatically add author label, e.g. Lv1, Lv2, Lv3...
     list: []
   # Code block settings
   code_block:
@@ -265,7 +265,7 @@ articles:
     init_open: true # Open toc by default
   # Whether to enable copyright notice
   copyright:
-    enable: true # Whether to enable
+    enable: false # Whether to enable
     default: cc_by_nc_sa # Default license, can be cc_by_nc_sa, cc_by_nd, cc_by_nc, cc_by_sa, cc_by, all_rights_reserved, public_domain
   # Whether to enable lazyload for images
   lazyload: true
@@ -274,7 +274,7 @@ articles:
     # Whether to enable article recommendation
     enable: false
     # Article recommendation title
-    title: 推荐阅读
+    title:
     # Max number of articles to display
     limit: 3
     # Max number of articles to display mobile
