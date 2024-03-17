@@ -1,5 +1,6 @@
 # Blog
-This is my newest iteration of my personal blog. It is built using Hexo and the Redefine theme.
+This ~~is~~ was my newest iteration of my personal blog. It is built using Hexo and the Redefine theme.
+**Note**: Here is my latest blog's repo: [https://github.com/Kairos-T/blog-v2](https://github.com/Kairos-T/blog-v2)
 
 ## I want this too!!!
 The theme's repo can be found [here](https://github.com/EvanNotFound/hexo-theme-redefine).
